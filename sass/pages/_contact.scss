@@ -1,0 +1,84 @@
+#contact_body {
+    .main__h2 {
+        width: 50%;
+        padding-left: 10%;
+        padding-top: 3%;
+		text-align: left;
+        align-self: left;
+    }
+    .main, .main__section {
+        display: flex;
+        flex-direction: row;
+        justify-content: end;
+        margin: 0px;
+        padding: 0px;
+        height: 100%;
+    }
+    .main__section {
+        width: 100%;
+    }
+    .main__form {
+		.main__div {
+			padding: 0;
+			margin: 0%;
+			width: 40%;
+			display: inline-block;
+			text-align: left;
+		}
+        .main__fieldset {
+            margin-bottom: 2%;
+            margin-top: 2%;
+            .main__div {
+                padding-left: 2.5%;
+            }
+        }
+        .main__legend {
+            font-size: 1rem;
+        }
+        .main__label {
+            display: flex;
+            align-items: center;
+            font-size: 0.8rem;
+        }
+        .main__input {
+            font-size: 0.8rem;
+            width: 90%;
+        }
+        #message {
+            width: 100%;
+        }
+        align-self: center;
+        margin-left: 10%;
+		border-bottom-left-radius: 3% 5%;
+		border-top-left-radius: 3% 5%;
+		background-color: $main_background_color;
+	}
+}
+
+@media screen and (min-width: $breakpoint_min) and (max-width: $breakpoint_mid) {
+    #contact_body {
+        .main__form {
+            .main__legend {
+                font-size: 0.8rem;
+            }
+            .main__legend, .main__label, .main__input {
+                font-size: 0.6rem;
+            }
+        }
+    }
+}
+@media screen and (min-width: $breakpoint_mid) and (max-width: $breakpoint_max) {
+    #contact_body {
+        .main__form {
+            .main__legend {
+                font-size: 1rem;
+            }
+            .main__legend {
+                font-size: 0.9rem;
+            }
+            .main__label, .main__input {
+                font-size: 0.8rem;
+            }
+        }
+    }
+}

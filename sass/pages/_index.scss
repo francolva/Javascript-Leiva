@@ -1,0 +1,154 @@
+#presentation {
+	width: 100%;
+	justify-content: center;
+	animation: movein 2s, fadein 2s;
+	.main__div {
+		width: 90%;
+		display: grid;
+		justify-items: space-evenly;
+		align-items: end;
+		grid-template-areas: "img title" "img p" "img cite" "simulator simulator";
+		column-gap: 3%;
+		row-gap: 10px;
+	}
+	.main__img {
+		grid-area: img;
+		width: 600px;
+	}
+	.main__h2 {
+		grid-area: title;
+		font-style: normal;
+		font-weight: 500;
+		font-size: 2.7rem;
+		color: $main_text_color;
+		text-align: left;
+	}
+	.main__h3 {
+		font-style: normal;
+		font-weight: 500;
+		font-size: 1.4rem;
+		color: $main_text_color;
+		text-align: left;
+	}
+	.main__p--frontpage {
+		grid-area: p;
+		font-size: 1.6rem;
+		font-weight: 500;
+		color: $main_text_color;
+		word-wrap: break-word;
+	}
+	#cite {
+		grid-area: cite;
+		align-self: start;
+		font-style: italic;
+		font-size: 1rem;
+	}
+	#simulator {
+		padding-top: 5%;
+		display: flex;
+		align-items: flex-start;
+		flex-direction: column;
+		gap: 2rem;
+		grid-area: simulator;
+	}
+}
+.button__container {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+}
+#simulator {
+	.button__container {
+		.button {
+			align-self: center;
+			padding-top: 3px;
+			padding-bottom: 3px;
+		}
+		.main__li {
+			padding: 5px;
+			font-size: 1rem;
+			font-weight: 500;
+			color: $main_text_color;
+			word-wrap: break-word;
+			animation: movein 1s, fadein 1s;
+		}
+	}
+	.main__form {
+		display: flex;
+		flex-direction: row;
+		width: 100%;
+		margin-top: 2rem;
+		.main__div {
+			padding: 0;
+			margin: 0%;
+			width: 50%;
+			display: inline-block;
+			text-align: left;
+		}
+		.main__label {
+			display: flex;
+			align-items: center;
+			font-size: 0.9rem;
+		}
+		.main__input {
+			padding-left: 7px;
+			font-size: 0.9rem;
+			border-radius: 5px;
+			width: 95%;
+		}
+	}
+	#simulatedPrice {
+		margin-top: 3%;
+		padding-left: 2%;
+		padding-right: 2%;
+		font-size: 3rem;
+		align-self: center;
+		font-weight: 500;
+		color: $main_text_color;
+		border-radius: 5px;
+		background-color: $button_background_color;
+		background-blend-mode: color-dodge;
+		animation: movein 2s, fadein 2s;
+	}
+}
+
+@media screen and (min-width: $breakpoint_min) and (max-width: $breakpoint_mid) {
+	#presentation {
+		.main__div {
+			height: 80%;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
+		.main__img {
+			grid-area: img;
+			width: 250px;
+		}
+		.main__h2 {
+			font-size: 1.8rem;
+			text-align: center;
+		}
+		.main__h3 {
+			font-size: 1.2rem;
+		}
+		.main__p--frontpage {
+			font-size: 1.4rem;
+			text-align: center;
+		}
+		#cite {
+			align-self: center;
+		}
+	}
+}
+#presentation {
+	animation: movein 2s, fadein 2s;
+}
+
+@keyframes fadein {
+	from { opacity: 0 }
+	to   { opacity: 1 }
+}
+@keyframes movein {
+	from { transform: translate3d(0, -50px, 0) }
+	to   { transform: translate3d(0, 0, 0) }
+}

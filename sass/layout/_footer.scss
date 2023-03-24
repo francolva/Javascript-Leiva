@@ -1,0 +1,40 @@
+.footer {
+	font-size: 1rem;
+	display: flex;
+	width: 100%;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: fit-content;
+	color: $main_text_color;
+	background-color: $main_background_color;
+	border-top-left-radius: 2% 40%;
+	border-top-right-radius: 2% 40%;
+	}
+	.footer__a {
+		display: inline-block;
+	}
+	.footer__a img {
+		display: block;
+		height: 26px;
+		width: auto;
+	}
+		#instagram {
+			height: 20px;
+			padding-bottom: 3px;
+		}
+
+	@media screen and (min-width: $breakpoint_min) and (max-width: $breakpoint_mid) {
+		.footer {
+			font-size: 0.7rem;
+		}
+		.footer__a img {
+			display: block;
+			height: 22px;
+			width: auto;
+		}
+			#instagram {
+				height: 16px;
+				padding-bottom: 3px;
+			}
+	}

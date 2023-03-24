@@ -1,0 +1,28 @@
+body {
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+	background-color: rgb(63, 63, 63);
+	animation: darkenbkg 2s;
+	backdrop-filter: brightness(50%);
+}
+#index_body {
+	background-image: url("../assets/img/bkg-index.jpg");
+}
+#gallery_body {
+	background-image: url("../assets/img/bkg-gallery.jpg");
+}
+#about-us_body {
+	background-image: url("../assets/img/bkg-about-us.jpg");
+}
+#faq_body {
+	background-image: url("../assets/img/bkg-faq.jpg");
+}
+#contact_body {
+	background-image: url("../assets/img/bkg-contact.jpg");
+}
+
+@keyframes darkenbkg {
+	from { backdrop-filter: brightness(100%);}
+	to   { backdrop-filter: brightness(50%);}
+}

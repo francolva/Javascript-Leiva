@@ -1,0 +1,12 @@
+.button {
+	font-weight: bold;
+	color: $main_text_color;
+	background-color: $button_background_color;
+	width: 15%;
+	height: 80%;
+	margin: 4px 2px;
+	border-bottom-left-radius: 5% 20%;
+	border-bottom-right-radius: 5% 20%;
+	border-top-left-radius: 5% 20%;
+	border-top-right-radius: 5% 20%;
+}

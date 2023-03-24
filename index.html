@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="CAMEROLL, FOTO, FOTOGRAFÍA, FOTÓGRAFO PROFESIONAL, EVENTOS, CASAMIENTOS, CUMPLEAÑOS">
+    <meta name="description" content="Cameroll es un servicio de fotografía profesional con más de 20 años de experiencia en todo tipo de eventos ubicado en Buenos Aires">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cameroll - Inicio</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link rel="icon" type="image/png" href="assets/img/favicon-64.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+</head>
+
+<body id="index_body">
+    
+    <header class="header">
+        <h1 class="header__h1"><a class="header__a" href="#">Cameroll</a></h1>
+        <nav class="header__nav">
+            <ul class="header__ul">
+                <li class="header__li"><a class="header__a--nav" href="index.html">Inicio</a></li>
+                <span class="header__span"> / </span>
+                <li class="header__li"><a class="header__a--nav" href="./pages/gallery.html">Galería</a></li>
+                <span class="header__span"> / </span>
+                <li class="header__li"><a class="header__a--nav" href="./pages/about-us.html">Nosotros</a></li>
+                <span class="header__span"> / </span>
+                <li class="header__li"><a class="header__a--nav" href="./pages/faq.html">Preguntas</a></li>
+                <span class="header__span"> / </span>
+                <li class="header__li"><a class="header__a--nav" href="./pages/contact.html">Contacto</a>
+            </ul>
+            </li>
+        </nav>
+        <img class="header__img" src="assets/img/cameroll-logo.png" alt="Cameroll Logo">
+    </header>
+
+    <main id="presentation" class="main">
+        <div class="main__div">
+            <img class="main__img" src="assets/img/photographer-img.jpg" alt="Fotógrafos profesionales">
+            <h2 class="main__h2">
+                <span class="gradient-text">
+                    Capturando momentos
+                </span>
+            </h2>
+            <p class="main__p--frontpage">"Fotografiar a una persona es decir que nos interesa"</p>
+            <p id="cite" class="main__p--frontpage">- Bernard Arcand</p>
+        </div>
+        <div id="simulator" class="main__div">
+            <h2 class="main__h2 gradient-text">Nuestros servicios</h2>
+            <h3 class="main__h3">Presione "ver más" para conocer nuestros servicios o calcule usted mismo el precio de su servicio personalizado</h3>
+            <div id="seeMoreButton__container" class="button__container">
+                <button id="seeMore" class="button">Ver más</button>
+            </div>
+            <form action="-" class="main__form">
+                <div class="main__div">
+                    <label class="main__label" for="quantity">Cantidad de fotos:</label>
+                    <input class="main__input" type="number" min="0" max="1000000" id="quantity" placeholder=" Cantidad">
+                </div>
+                <div class="main__div">
+                    <label class="main__label" for="installments">Número de cuotas:</label>
+                    <input class="main__input" type="number" min="0" max="6" id="installments" placeholder=" Elija 1, 3 o 6 cuotas">
+                </div>
+            </form>
+            <div id= "simulateButton__container" class="button__container">
+                <button id="simulate" class="button">Simular</button>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <span class="footer__span" id="social">
+            <a class="footer__a" href="index.html"><img id="instagram" src="./assets/img/instagram-logo.svg" alt="Instagram profile"></a>
+            <a class="footer__a" href="index.html"><img id="twitter" src="./assets/img/twitter-logo.svg" alt="Twitter profile"></a>
+            <a class="footer__a" href="index.html"><img id="facebook" src="./assets/img/facebook-logo.svg" alt="Facebook profile"></a>
+        </span>
+        <p class="footer__p">Cameroll 2022 - Todos los derechos reservados
+        </p>
+    </footer>
+
+</body>
+<script src="js/index.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+</html>

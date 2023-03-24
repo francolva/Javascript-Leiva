@@ -1,0 +1,6 @@
+[
+    {"nombre":"Basic", "cantidadFotos":300, "precioParcial":5400},
+    {"nombre":"Medium", "cantidadFotos":600, "precioParcial":18150},
+    {"nombre":"Premium", "cantidadFotos":2000, "precioParcial":60500},
+    {"nombre":"Personalizado", "cantidadFotos":"cantidad a convenir", "precioParcial":"calcular"}
+]

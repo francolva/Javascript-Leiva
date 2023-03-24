@@ -1,0 +1,17 @@
+body {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas: "header" "main" "footer";
+}
+header {
+    grid-area: header;
+}
+main {
+    grid-area: main;
+    justify-self: center;
+}
+footer {
+    grid-area: footer;
+    align-self: end;
+    justify-self: end;
+}

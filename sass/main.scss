@@ -1,0 +1,23 @@
+// Variables and global scope
+@import "base/variables";
+@import "base/typography";
+@import "base/reset";
+@import "base/background-image";
+
+// Components
+@import "components/images";
+@import "components/button";
+@import "components/form";
+@import "components/iframe";
+@import "components/list";
+
+// Layout
+@import "layout/body";
+@import "layout/header";
+@import "layout/main";
+@import "layout/footer";
+
+// Pages
+@import "pages/index";
+@import "pages/gallery";
+@import "pages/contact";
