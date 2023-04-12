@@ -9,3 +9,6 @@ Consigna
 - La librería elegida para trabajar es Toastify.
 - Se utilizó un JSON local para el fetch (assets/products.json).
 - Uso de asincronía y promesas en llamado a localStorage.
+
+# Último commit (12-04)
+Se agregó historial de input de usuario y cambios menores de refactoring (separación de tareas dentro de las funciones)

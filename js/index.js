@@ -17,6 +17,35 @@ const getLocalStorage = async () => {
 
 
 /**
+ * Toastify notifications alerting the user of the invalid input.
+ */
+const wrongQuantityAlert = {
+    text: "Por favor, ingrese un número válido",
+    duration: 3000,
+    gravity: "bottom",
+    position: "right",
+    ariaLive: "assertive",
+    stopOnFocus: true, // Prevents dismissing of toast on hover
+    style: {
+        background: "linear-gradient(to right, #00b09b, #96c93d)",
+    },
+}
+
+
+const wrongInstallmentsAlert = {
+    text: "Por favor, ingrese un valor entre 1, 3 o 6",
+    duration: 3000,
+    gravity: "bottom",
+    position: "right",
+    ariaLive: "assertive",
+    stopOnFocus: true, // Prevents dismissing of toast on hover
+    style: {
+        background: "linear-gradient(to right, #00b09b, #96c93d)",
+    },
+}
+
+
+/**
  * Constructor class of the button objects.
  * @param {String} buttonId         Buttons ID in the HTML
  * @param {Function} buttonFunction Function of the button action when clicked
@@ -105,7 +134,7 @@ function clickSimulatePrice() {
         try {
             simulatedPriceDisplay.remove();
         } catch (error) {
-            console.error(error)
+            console.warn(error)
         }
     }
     else {
@@ -155,66 +184,67 @@ function installmentsSimulator(price) {
         case 6:
             return parseInt(calcInstallments(price, recharge6));
         default:
-            Toastify({
-            text: "Por favor, ingrese un valor entre 1, 3 o 6",
-            duration: 3000,
-            gravity: "bottom",
-            position: "right",
-            ariaLive: "assertive",
-            stopOnFocus: true, // Prevents dismissing of toast on hover
-            style: {
-                background: "linear-gradient(to right, #00b09b, #96c93d)",
-            },
-            }).showToast();
+            Toastify(wrongInstallmentsAlert).showToast();
+    }
+}
+
+
+/**
+ * Calculates the current local timestamp using Luxon library.
+ * @returns {String} Current formatted short with seconds datetime.
+ */
+function getLocalDateTime() {
+    try {
+        let DateTime = luxon.DateTime;
+        let dt = DateTime.now();
+        let localDateTimeNow = dt.toLocaleString(DateTime.DATETIME_SHORT_WITH_SECONDS);
+        return localDateTimeNow;
+    } catch(error) {
+        console.error(error)
     }
 }
 
 
 /**
  * Calculates the estimated price after discount and tax. Not the final estimation.
- * @returns Estimated price number before final tax application.
+ * @returns {String} Estimated price number before final tax application.
  */
 function priceSimulator() {
-    const unitBasePrice = 100
-    const minorDiscount = 0.85
-    const majorDiscount = 0.75
+    const unitBasePrice = 100;
+    const minorDiscount = 0.85;
+    const majorDiscount = 0.75;
+    let finalPrice = null;
 
     let inputNumber = parseInt(document.getElementById("quantity").value);
     if (inputNumber >= 0 && inputNumber <= 100) {
-        let basePrice = unitBasePrice*calcIVA(inputNumber)
-        let finalPrice = installmentsSimulator(basePrice)
+        let basePrice = unitBasePrice*calcIVA(inputNumber);
+        finalPrice = installmentsSimulator(basePrice);
         if (!finalPrice) {
             return
         }
-        return ("$" + finalPrice.toString())
     }
     else if (inputNumber > 100 && inputNumber <= 500) {
-        let basePrice = unitBasePrice*calcDiscounts(calcIVA(inputNumber), minorDiscount)
-        let finalPrice = installmentsSimulator(basePrice)
+        let basePrice = unitBasePrice*calcDiscounts(calcIVA(inputNumber), minorDiscount);
+        finalPrice = installmentsSimulator(basePrice);
         if (!finalPrice) {
             return
         }
-        return ("$" + finalPrice.toString())
     }
     else if (inputNumber > 500 && inputNumber <=10000) {
-        let basePrice = unitBasePrice*calcDiscounts(calcIVA(inputNumber), majorDiscount)
-        let finalPrice = installmentsSimulator(basePrice)
+        let basePrice = unitBasePrice*calcDiscounts(calcIVA(inputNumber), majorDiscount);
+        finalPrice = installmentsSimulator(basePrice);
         if (!finalPrice) {
             return
         }
-        return ("$" + finalPrice.toString())
     }
     else {
-        Toastify({
-            text: "Por favor, ingrese un número válido",
-            duration: 3000,
-            gravity: "bottom",
-            position: "right",
-            ariaLive: "assertive",
-            stopOnFocus: true, // Prevents dismissing of toast on hover
-            style: {
-                background: "linear-gradient(to right, #00b09b, #96c93d)",
-            },
-            }).showToast();
+        Toastify(wrongQuantityAlert).showToast();
+    }
+    try {
+        let inputSummary = `Qtty: ${inputNumber.toString()} ; Price: ${finalPrice.toString()}`;
+        localStorage.setItem(getLocalDateTime(), inputSummary);
+        return ("$" + finalPrice.toString());
+    } catch(error) {
+        console.error(error)
     }
 }
